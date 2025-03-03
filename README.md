@@ -8,3 +8,6 @@
    - Stored procedures for adding recipes and ingredients
    - Views for easy data retrieval
    - Triggers for logging insertions and deletions
+
+Diagram:
+![Database Diagram](diagram.png)
