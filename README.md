@@ -10,4 +10,6 @@
    - Triggers for logging insertions and deletions
 
 Diagram:
+
+
 ![Database Diagram](diagram.png)
