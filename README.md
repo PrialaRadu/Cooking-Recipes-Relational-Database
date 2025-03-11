@@ -19,3 +19,13 @@ SQL Files:
 
 
 ![Recipe SQL Diagram](diagram.png)
+
+![categories](categories.png)
+
+![ingredients](ingredients_popularity.png)
+
+![kcal](kcal.png)
+
+![recipes](recipes_ratings.png)
+
+![users](users_opinion.png)
