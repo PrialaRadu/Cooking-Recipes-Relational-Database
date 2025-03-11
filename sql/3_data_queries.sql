@@ -1,0 +1,103 @@
+
+-- 1) Query with UNION ----------------------------------------------------------
+SELECT NAME AS RECIPE, DURATION 
+FROM Recipe
+WHERE RECIPE_ID IN (SELECT RECIPE_ID FROM Recipe_Ingredient WHERE INGREDIENT_ID = (SELECT INGREDIENT_ID FROM Ingredient WHERE NAME = 'beef'))
+UNION
+SELECT NAME AS RECIPE, DURATION 
+FROM Recipe
+WHERE RECIPE_ID IN (SELECT RECIPE_ID FROM Recipe_Ingredient WHERE INGREDIENT_ID = (SELECT INGREDIENT_ID FROM Ingredient WHERE NAME = 'sugar'));
+GO
+
+-- 2) Queries with JOIN ------------------------------------------------------------
+-- a) INNER JOIN
+SELECT 
+    R.NAME AS RECIPE,
+    I.NAME AS INGREDIENT,
+    RI.QUANTITY,
+    C.NAME AS CATEGORY
+FROM Recipe R
+INNER JOIN Recipe_Ingredient RI ON R.RECIPE_ID = RI.RECIPE_ID
+INNER JOIN Ingredient I ON RI.INGREDIENT_ID = I.INGREDIENT_ID
+INNER JOIN Category C ON R.CATEGORY_ID = C.CATEGORY_ID;
+GO
+
+-- b) LEFT JOIN
+SELECT DISTINCT 
+    I.NAME AS INGREDIENT,
+    R.NAME AS RECIPE,
+    RI.QUANTITY
+FROM Ingredient I
+LEFT JOIN Recipe_Ingredient RI ON I.INGREDIENT_ID = RI.INGREDIENT_ID
+LEFT JOIN Recipe R ON RI.RECIPE_ID = R.RECIPE_ID;
+GO
+
+-- c) FULL JOIN
+SELECT 
+    R.NAME AS RECIPE,
+    I.NAME AS INGREDIENT,
+    RI.QUANTITY
+FROM Recipe R
+LEFT JOIN Recipe_Ingredient RI ON R.RECIPE_ID = RI.RECIPE_ID
+FULL JOIN Ingredient I ON RI.INGREDIENT_ID = I.INGREDIENT_ID;
+GO
+
+-- 3) Queries with GROUP BY ------------------------------------------------------
+-- a) Total ingredients per recipe
+SELECT 
+    R.NAME AS RECIPE,
+    COUNT(RI.INGREDIENT_ID) AS INGREDIENT_COUNT
+FROM Recipe R
+INNER JOIN Recipe_Ingredient RI ON R.RECIPE_ID = RI.RECIPE_ID
+GROUP BY R.NAME
+ORDER BY INGREDIENT_COUNT DESC;
+GO
+
+-- b) Total calories per recipe
+SELECT 
+    R.NAME AS RECIPE,
+    SUM(I.KCAL * RI.QUANTITY / 100) AS TOTAL_KCAL
+FROM Recipe R
+INNER JOIN Recipe_Ingredient RI ON R.RECIPE_ID = RI.RECIPE_ID
+INNER JOIN Ingredient I ON RI.INGREDIENT_ID = I.INGREDIENT_ID
+GROUP BY R.NAME
+HAVING SUM(I.KCAL * RI.QUANTITY / 100) > 200
+ORDER BY TOTAL_KCAL DESC;
+GO
+
+-- c) Number of reviews and average rating per recipe
+SELECT 
+    R.NAME AS RECIPE,
+    COUNT(RV.REVIEW_ID) AS REVIEW_COUNT,
+    AVG(RV.RATING) AS AVERAGE_RATING
+FROM Recipe R
+LEFT JOIN Review RV ON R.RECIPE_ID = RV.RECIPE_ID
+GROUP BY R.NAME
+ORDER BY AVERAGE_RATING DESC;
+GO
+
+-- 4) Nested Queries -------------------------------------------------
+-- a) Using IN
+SELECT I.NAME AS INGREDIENT
+FROM Ingredient I
+WHERE I.INGREDIENT_ID IN (
+    SELECT RI.INGREDIENT_ID
+    FROM Recipe_Ingredient RI
+    WHERE RI.RECIPE_ID IN (
+        SELECT R.RECIPE_ID
+        FROM Recipe R
+        WHERE R.INGREDIENT_COUNT > 3
+    )
+);
+GO
+
+-- b) Using EXISTS
+SELECT R.NAME AS RECIPE
+FROM Recipe R
+WHERE EXISTS (
+    SELECT 1
+    FROM Review RV
+    INNER JOIN UserAccount U ON RV.USER_ID = U.USER_ID
+    WHERE RV.RECIPE_ID = R.RECIPE_ID AND U.NAME LIKE 'Ion%'
+);
+GO
