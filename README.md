@@ -11,6 +11,7 @@
    - Triggers for logging insertions and deletions
 
 Dashboard:
+![Recipe Dashboard](Tableau Dashboard.png)
 
 Diagram:
-
+![Recipe SQL Diagram](diagram.png)
