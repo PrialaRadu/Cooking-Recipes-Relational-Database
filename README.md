@@ -1,7 +1,7 @@
 # Recipe Management Database + Tableau Dashboard Presentation
 
   A structured SQL database for managing recipes, ingredients, users, and reviews. It includes table definitions, relationships, stored procedures, views, and triggers to handle recipe creation, ingredient management, and user interactions.
-  A concise presentation of the recipes data, visualized using Tableau Sheets and Dashboard.
+  Also, a Tableau dashboard to visually present and analyze the cooking recipes data.
 
 
 SQL Files:
