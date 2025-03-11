@@ -4,8 +4,14 @@
   A concise presentation of the recipes data, visualized using Tableau Sheets and Dashboard.
 
 
-SQL Files Overview:
+SQL Files:
   - 1_create_tables.sql = creating the tables of culinary recipes (Ingredient, Category, Recipe, UserAccount, Review, Recipe_Ingredient).
+  - 2_insert_and_modify_data = handles data insertion and manipulation with sample data for ingredients, recipes, etc.
+  - 3_data_queries = a series of queries that retrieve meaningful data, using UNION, INNER JOIN, FULL JOIN, IN, EXISTS, etc.
+  - 4_validation_functions = user-defined functions for validating input data.
+  - 5_stored_procedures = defines stored procedures for inserting data into the database with built-in validations.
+  - 6_view_details = a view for recipe details
+  - 7_triggers = SQL triggers that perform actions based on certain database events.
   
   Features:
    - Structured database schema (recipes, ingredients, categories, users, reviews)
