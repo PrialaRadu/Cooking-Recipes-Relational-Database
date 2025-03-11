@@ -13,14 +13,9 @@ SQL Files:
   - 5_stored_procedures = defines stored procedures for inserting data into the database with built-in validations.
   - 6_view_details = a view for recipe details
   - 7_triggers = SQL triggers that perform actions based on certain database events.
-  
-  Features:
-   - Structured database schema (recipes, ingredients, categories, users, reviews)
-   - Many-to-many relationship handling for ingredients and recipes
-   - Stored procedures for adding recipes and ingredients
-   - Views for easy data retrieval
-   - Triggers for logging insertions and deletions
+
+![Recipe SQL Diagram](diagram.png)
 
 
 ![Recipe Dashboard](dashboard.png)
-![Recipe SQL Diagram](diagram.png)
+
