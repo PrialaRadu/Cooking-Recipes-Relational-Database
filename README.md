@@ -14,8 +14,8 @@ SQL Files:
   - 6_view_details = a view for recipe details
   - 7_triggers = SQL triggers that perform actions based on certain database events.
 
-![Recipe SQL Diagram](diagram.png)
-
 
 ![Recipe Dashboard](dashboard.png)
 
+
+![Recipe SQL Diagram](diagram.png)
