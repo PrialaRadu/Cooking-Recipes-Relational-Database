@@ -22,10 +22,10 @@ SQL Files:
 
 ![categories](graphs/categories.png)
 
-![ingredients](ingredients_popularity.png)
+![ingredients](graphs/ingredients_popularity.png)
 
-![kcal](kcal.png)
+![kcal](graphs/kcal.png)
 
-![recipes](recipes_ratings.png)
+![recipes](graphs/recipes_ratings.png)
 
-![users](users_opinion.png)
+![users](graphs/users_opinion.png)
