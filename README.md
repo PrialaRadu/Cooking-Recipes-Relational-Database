@@ -10,8 +10,6 @@
    - Views for easy data retrieval
    - Triggers for logging insertions and deletions
 
-Dashboard:
-![Recipe Dashboard](dashboard.png)
 
-Diagram:
+![Recipe Dashboard](dashboard.png)
 ![Recipe SQL Diagram](diagram.png)
