@@ -10,7 +10,7 @@
    - Views for easy data retrieval
    - Triggers for logging insertions and deletions
 
+Dashboard:
+
 Diagram:
 
-
-![Database Diagram](diagram.png)
