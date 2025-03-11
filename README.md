@@ -20,7 +20,7 @@ SQL Files:
 
 ![Recipe SQL Diagram](diagram.png)
 
-![categories](categories.png)
+![categories](graphs/categories.png)
 
 ![ingredients](ingredients_popularity.png)
 
