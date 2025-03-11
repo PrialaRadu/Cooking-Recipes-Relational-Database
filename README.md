@@ -3,6 +3,10 @@
   A structured SQL database for managing recipes, ingredients, users, and reviews. It includes table definitions, relationships, stored procedures, views, and triggers to handle recipe creation, ingredient management, and user interactions.
   A concise presentation of the recipes data, visualized using Tableau Sheets and Dashboard.
 
+
+SQL Files Overview:
+  1_create_tables.sql = creating the tables of culinary recipes (Ingredient, Category, Recipe, UserAccount, Review, Recipe_Ingredient).
+  
   Features:
    - Structured database schema (recipes, ingredients, categories, users, reviews)
    - Many-to-many relationship handling for ingredients and recipes
