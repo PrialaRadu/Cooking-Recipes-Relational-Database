@@ -5,7 +5,7 @@
 
 
 SQL Files Overview:
-  1_create_tables.sql = creating the tables of culinary recipes (Ingredient, Category, Recipe, UserAccount, Review, Recipe_Ingredient).
+  - 1_create_tables.sql = creating the tables of culinary recipes (Ingredient, Category, Recipe, UserAccount, Review, Recipe_Ingredient).
   
   Features:
    - Structured database schema (recipes, ingredients, categories, users, reviews)
